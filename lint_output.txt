@@ -1,0 +1,112 @@
+
+> vora@0.1.0 lint
+> eslint
+
+
+/home/yugaaank/Desktop/vora/app/history/page.tsx
+   6:10  warning  'useModal' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  @typescript-eslint/no-unused-vars
+   7:10  warning  'Trash2' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+  13:9   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yugaaank/Desktop/vora/app/history/page.tsx:13:9
+  11 |
+  12 |     useEffect(() => {
+> 13 |         setHistory(getHistory());
+     |         ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  14 |
+  15 |         const handleHistoryUpdate = () => setHistory(getHistory());
+  16 |         window.addEventListener('history-updated', handleHistoryUpdate);  react-hooks/set-state-in-effect
+
+/home/yugaaank/Desktop/vora/app/liked/page.tsx
+  10:73  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/yugaaank/Desktop/vora/app/movies/page.tsx
+  14:5  warning  'getDocumentaries' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/yugaaank/Desktop/vora/app/page.tsx
+  47:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yugaaank/Desktop/vora/app/page.tsx:47:5
+  45 |   // ... (rest of history and notification effects unchanged)
+  46 |   useEffect(() => {
+> 47 |     setHistory(getHistory());
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  48 |
+  49 |     const handleHistoryUpdate = () => setHistory(getHistory());
+  50 |     window.addEventListener('history-updated', handleHistoryUpdate);  react-hooks/set-state-in-effect
+
+/home/yugaaank/Desktop/vora/app/tv/[id]/page.tsx
+   8:16  warning  'Star' is defined but never used  @typescript-eslint/no-unused-vars
+  10:8   warning  'clsx' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/yugaaank/Desktop/vora/components/BentoGrid.tsx
+  87:71  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  91:78  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/home/yugaaank/Desktop/vora/components/Header.tsx
+   4:18  warning  'Bell' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         @typescript-eslint/no-unused-vars
+  19:13  warning  'openPlayer' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-unused-vars
+  58:13  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yugaaank/Desktop/vora/components/Header.tsx:58:13
+  56 |             return () => clearTimeout(delayDebounceFn);
+  57 |         } else {
+> 58 |             setSearchResults([]);
+     |             ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  59 |         }
+  60 |     }, [searchQuery]);
+  61 |  react-hooks/set-state-in-effect
+  99:37  warning  Expected an assignment or function call and instead saw an expression                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @typescript-eslint/no-unused-expressions
+
+/home/yugaaank/Desktop/vora/components/MovieRow.tsx
+  4:37  warning  'Play' is defined but never used  @typescript-eslint/no-unused-vars
+  4:43  warning  'Plus' is defined but never used  @typescript-eslint/no-unused-vars
+  4:49  warning  'Star' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/yugaaank/Desktop/vora/components/Sidebar.tsx
+  3:16  warning  'Compass' is defined but never used  @typescript-eslint/no-unused-vars
+  3:57  warning  'User' is defined but never used     @typescript-eslint/no-unused-vars
+
+/home/yugaaank/Desktop/vora/components/VideoPlayer.tsx
+  30:17  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yugaaank/Desktop/vora/components/VideoPlayer.tsx:30:17
+  28 |             );
+  29 |             if (item?.currentTime) {
+> 30 |                 setSavedTime(item.currentTime);
+     |                 ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  31 |                 console.log(`Resuming ${movie.title} at ${item.currentTime}s`);
+  32 |             } else {
+  33 |                 setSavedTime(0);  react-hooks/set-state-in-effect
+  73:22  warning  'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+
+/home/yugaaank/Desktop/vora/lib/notifications.ts
+  1:22  warning  'HistoryItem' is defined but never used    @typescript-eslint/no-unused-vars
+  2:24  warning  'TVShowDetails' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 23 problems (7 errors, 16 warnings)
+
