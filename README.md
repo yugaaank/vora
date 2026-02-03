@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# v0ra
+
+A **Next.js-based video streaming platform** focused on fast content discovery and instant playback — not a Netflix clone.
+
+Live demo: [https://v0ra.vercel.app/](https://v0ra.vercel.app/)
+
+---
+
+## What This Is (and What It Isn’t)
+
+### This is:
+
+* A modern Next.js streaming site
+* API-driven, no hardcoded content
+* Dynamic routing for movies & TV shows
+* Fast navigation with minimal friction
+* Built for exploration, not endless scrolling
+
+### This is not:
+
+* A Netflix clone
+* A UI copy of any existing platform
+* A recommendation-engine-heavy product
+* A bloated auth-driven SaaS app
+
+---
+
+## Features
+
+* 🎬 Movie & TV metadata from **TMDB**
+* 📺 Video streaming via an external video API
+* 🔗 Dynamic routes for movies and shows
+* ⚡ Fast page loads using Next.js
+* 🎨 Modern, responsive UI
+* 🌙 Clean, distraction-free layout
+* 🧭 Content-first navigation
+* 🔄 Server-side and client-side data fetching
+
+---
+
+## Tech Stack
+
+* **Framework:** Next.js
+* **Language:** JavaScript / TypeScript
+* **Styling:** CSS / Tailwind / Custom styles
+* **APIs:**
+
+  * TMDB API (metadata)
+  * External Video Streaming API (playback)
+* **Deployment:** Vercel
+
+---
+
+## How It Works
+
+1. **TMDB API** provides movies, TV shows, posters, ratings, and descriptions
+2. **Dynamic Routing**
+
+   * `/movie/[id]`
+   * `/tv/[id]`
+3. **Video API** resolves a playable stream using the content ID
+4. **UI Layer** adapts dynamically based on content type
+
+---
+
+## Environment Variables
+
+Create a `.env.local` file:
+
+```env
+NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key
+NEXT_PUBLIC_VIDEO_API_URL=your_video_api_endpoint
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+git clone https://github.com/your-username/v0ra.git
+cd v0ra
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000` to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+Optimized for **Vercel**.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Legal Note
 
-## Deploy on Vercel
+* This project does **not** host any video content
+* All metadata is provided by **TMDB**
+* Streaming links are fetched from third-party APIs
+* Intended for educational and experimental use
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Credits
+
+* TMDB for movie and TV data
+* Next.js for the framework
+* Vercel for hosting
+
+---
+
+## Author
+
+Built by **Yug**
